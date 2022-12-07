@@ -16,11 +16,6 @@ state = True #Lancer l'application
 
 x, y = 0, 0
 
-mouvement = ""
-fleche_haut = pygame.K_UP
-fleche_bas = pygame.K_DOWN
-fleche_gauche = pygame.K_LEFT
-fleche_droite = pygame.K_RIGHT
 
 while state:
 
@@ -28,24 +23,25 @@ while state:
     win.blit(png, (x, y))
     win.blit(object, (430, 300))
 
-    if mouvement == fleche_droite:
-        pygame.time.Clock().tick(30)
-        x += 10
-
-    elif mouvement == fleche_gauche:
-        pygame.time.Clock().tick(30)
-        x -= 10
-
-    elif mouvement == fleche_haut:
-        pygame.time.Clock().tick(30)
-        y += 10
-
-    if mouvement == fleche_bas:
-        pygame.time.Clock().tick(30)
-        y -= 10
 
     pygame.display.update()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             state = False
+        
+    if pygame.key.get_pressed()[pygame.K_RIGHT]:
+        pygame.time.Clock().tick(30)
+        x += 10
+
+    elif pygame.key.get_pressed()[pygame.K_LEFT]:
+        pygame.time.Clock().tick(30)
+        x -= 10
+
+    elif pygame.key.get_pressed()[pygame.K_DOWN]:
+        pygame.time.Clock().tick(30)
+        y += 10
+
+    elif pygame.key.get_pressed()[pygame.K_UP]:
+        pygame.time.Clock().tick(30)
+        y -= 10
