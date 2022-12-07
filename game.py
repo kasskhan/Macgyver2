@@ -8,6 +8,7 @@ framework = pygame.image.load('image/real_background.jpg')
 
 
 png = pygame.image.load('image/walk_cycle.gif')
+png = pygame.transform.scale(png, (100, 100))
 
 object = pygame.image.load('image/gold.jpg')
 object = pygame.transform.scale(object, (30, 30))
@@ -32,16 +33,16 @@ while state:
         
     if pygame.key.get_pressed()[pygame.K_RIGHT]:
         pygame.time.Clock().tick(30)
-        x += 10
+        x += 5
 
     elif pygame.key.get_pressed()[pygame.K_LEFT]:
         pygame.time.Clock().tick(30)
-        x -= 10
+        x -= 5
 
     elif pygame.key.get_pressed()[pygame.K_DOWN]:
         pygame.time.Clock().tick(30)
-        y += 10
+        y += 5
 
     elif pygame.key.get_pressed()[pygame.K_UP]:
         pygame.time.Clock().tick(30)
-        y -= 10
+        y -= 5
