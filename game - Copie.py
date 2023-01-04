@@ -23,7 +23,7 @@ while state:
 # Position des éléments
     win.blit(framework, (0, 0))
     win.blit(png, (x, y))
-    #print(x, y)
+    print(x, y)
     win.blit(object, (430, 300))
 
 # Réinitialiser la fenètre
